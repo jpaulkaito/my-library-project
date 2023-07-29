@@ -1,0 +1,46 @@
+{
+  "libraryBooks": [
+    {
+      "id": 0,
+      "title": "Romeo And Juliet",
+      "description": "Love and forever",
+      "status": "Available",
+      "category": "Romance"
+    },
+    {
+      "id": 1,
+      "title": "Tom And Jerry",
+      "description": "Catch me if you can",
+      "status": "Available",
+      "category": "Kids"
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "category": "test",
+      "status": "Available",
+      "id": 2
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "category": "tes",
+      "status": "Available",
+      "id": 3
+    },
+    {
+      "title": "abcd",
+      "description": "abcd",
+      "category": "education",
+      "status": "Available",
+      "id": 4
+    },
+    {
+      "title": "test",
+      "description": "test",
+      "category": "setst",
+      "status": "Available",
+      "id": 5
+    }
+  ]
+}

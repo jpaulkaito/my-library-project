@@ -1,6 +1,16 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
 }
+.sidebar-container {
+  flex: 0 0 300px; /* Adjust the width of the sidebar as needed */
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+}
+/* =========================================================================== */
 
 .App-logo {
   height: 40vmin;
