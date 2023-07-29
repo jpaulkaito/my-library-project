@@ -1,5 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { FormGroup, Label, Input, Button } from 'reactstrap';
 
 const AddBookForm = () => {
   const initialValues = {
@@ -56,24 +57,28 @@ const AddBookForm = () => {
         onSubmit={handleAddBook}
         validate={validateForm}
       >
-        <Form>
-          <div>
-            <label>Title:</label>
-            <Field type="text" name="title" />
-            <ErrorMessage name="title" component="div" className="error-message" />
-          </div>
-          <div>
-            <label>Description:</label>
-            <Field as="textarea" name="description" />
-            <ErrorMessage name="description" component="div" className="error-message" />
-          </div>
-          <div>
-            <label>Category:</label>
-            <Field type="text" name="category" />
-            <ErrorMessage name="category" component="div" className="error-message" />
-          </div>
-          <button type="submit">Add Book</button>
-        </Form>
+        {({ isSubmitting }) => (
+          <Form>
+            <FormGroup>
+              <Label for="title">Title:</Label>
+              <Field as={Input} type="text" name="title" id="title" />
+              <ErrorMessage name="title" component="div" className="error-message" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="description">Description:</Label>
+              <Field as={Input} type="textarea" name="description" id="description" />
+              <ErrorMessage name="description" component="div" className="error-message" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="category">Category:</Label>
+              <Field as={Input} type="text" name="category" id="category" />
+              <ErrorMessage name="category" component="div" className="error-message" />
+            </FormGroup>
+            <Button type="submit" color="primary" disabled={isSubmitting}>
+              {isSubmitting ? 'Adding...' : 'Add Book'}
+            </Button>
+          </Form>
+        )}
       </Formik>
     </div>
   );
