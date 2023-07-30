@@ -22,7 +22,7 @@ const SidebarMenu = () => {
                 }}
             >
                 <MenuItem component={<Link to="/addbooks" />}> Add Books</MenuItem>
-                <MenuItem component={<Link to="/calendar" />}> Remove Books</MenuItem>
+                <MenuItem component={<Link to="/deletebooks" />}> Remove Books</MenuItem>
                 <MenuItem component={<Link to="/e-commerce" />}> Update Books</MenuItem>
                 <SubMenu label="Display Books">
                     <MenuItem> by Title </MenuItem>

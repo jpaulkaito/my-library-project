@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { FormGroup, Label, Input, Button } from 'reactstrap';
 
 const AddBookForm = () => {
+  const fileInputRef = useRef(null);
+
   const initialValues = {
     title: '',
     description: '',
     category: '',
+    imgurl: '',
   };
 
   const handleAddBook = async (values, { resetForm }) => {
-    // Make a POST request to your backend API endpoint to add the book
     try {
+      const selectedFile = fileInputRef.current.files[0];
+
+      if (selectedFile) {
+        values.imgurl = selectedFile.name;
+        console.log("SelectedFile Name: " + selectedFile);
+      }
+
       const response = await fetch('http://localhost:3001/libraryBooks', {
         method: 'POST',
         headers: {
@@ -27,23 +36,25 @@ const AddBookForm = () => {
         throw new Error('Failed to add book');
       }
 
-      // Book added successfully, you can handle this as you prefer
       console.log('Book added successfully!');
-      // Reset the form after successful submission
       resetForm();
-      // You may want to refresh the list of books on the main page or show a success message.
+      fileInputRef.current.value = '';
     } catch (error) {
       console.error('Error adding book:', error);
-      // Handle the error, display a message to the user, etc.
     }
   };
 
   const validateForm = (values) => {
     const errors = {};
 
-    // Add validation rules if needed
     if (!values.title) {
       errors.title = 'Required';
+    }
+    if (!values.description) {
+      errors.description = 'Required';
+    }
+    if (!values.category) {
+      errors.category = 'Required';
     }
 
     return errors;
@@ -62,17 +73,33 @@ const AddBookForm = () => {
             <FormGroup>
               <Label for="title">Title:</Label>
               <Field as={Input} type="text" name="title" id="title" />
-              <ErrorMessage name="title" component="div" className="error-message" />
+              <ErrorMessage name="title" component="div" className="text-danger" />
             </FormGroup>
             <FormGroup>
               <Label for="description">Description:</Label>
               <Field as={Input} type="textarea" name="description" id="description" />
-              <ErrorMessage name="description" component="div" className="error-message" />
+              <ErrorMessage name="description" component="div" className="text-danger" />
             </FormGroup>
             <FormGroup>
               <Label for="category">Category:</Label>
               <Field as={Input} type="text" name="category" id="category" />
-              <ErrorMessage name="category" component="div" className="error-message" />
+              <ErrorMessage name="category" component="div" className="text-danger" />
+            </FormGroup>
+            <FormGroup>
+              <Label for="imgurl">Image Upload:</Label>
+              <Input
+                type="file"
+                name="imgurl"
+                id="imgurl"
+                innerRef={fileInputRef}
+                onChange={(e) => {
+                  console.log(e.target.value);
+                  if (!e.target.value) {
+                    fileInputRef.current.value = null;
+                  }
+                }}
+              />
+              <ErrorMessage name="imgurl" component="div" className="text-danger" />
             </FormGroup>
             <Button type="submit" color="primary" disabled={isSubmitting}>
               {isSubmitting ? 'Adding...' : 'Add Book'}

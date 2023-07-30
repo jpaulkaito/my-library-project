@@ -3,6 +3,7 @@ import React from 'react';
 import Sidebar from './pages/SidebarMenu';
 import { Routes, Route } from 'react-router-dom';
 import AddBookPage from './pages/AddBookPage';
+import DeleteBookPage from './pages/DeleteBookPage';
 import './App.css';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <div className="content-container">
         <Routes>
           <Route path='/addbooks' element={<AddBookPage />} />
+          <Route path='/deletebooks' element={<DeleteBookPage />} />
         </Routes>
       </div>
     </div>
