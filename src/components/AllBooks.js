@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, CardImg, CardDeck, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { fetchBooks, removeBook } from '../features/api/api';
-//import bla from '../app/images';
+// import { mapImageURL } from '../utils/mapImageURL';
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -9,6 +9,10 @@ const AllBooks = () => {
   useEffect(() => {
     fetchBooks()
       .then((data) => setBooks(data))
+      // .then((data) => {
+      //   const booksWithImageUrls = mapImageURL(data);
+      //   setBooks(booksWithImageUrls);
+      // })
       .catch((error) => console.error('Error fetching books:', error));
   }, []);
 

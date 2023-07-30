@@ -1,6 +1,8 @@
+import { baseUrl } from '../../app/shared/baseUrl';
+
 export const fetchBooks = async () => {
     try {
-      const response = await fetch('http://localhost:3001/libraryBooks');
+      const response = await fetch(baseUrl + 'libraryBooks');
       if (!response.ok) {
         throw new Error('Failed to fetch books');
       }
@@ -14,7 +16,7 @@ export const fetchBooks = async () => {
   
   export const removeBook = async (bookId) => {
     try {
-      const response = await fetch(`http://localhost:3001/libraryBooks/${bookId}`, {
+      const response = await fetch(baseUrl + `libraryBooks/${bookId}`, {
         method: 'DELETE',
       });
       if (!response.ok) {

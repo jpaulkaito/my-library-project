@@ -4,7 +4,7 @@
       "id": 0,
       "title": "Romeo And Juliet",
       "description": "Love and forever",
-      "imgurl": "librarypic.jpg",
+      "imgurl": "http://localhost:8001/librarypic.jpg",
       "status": "Available",
       "category": "Romance"
     },
@@ -12,9 +12,17 @@
       "id": 1,
       "title": "Tom And Jerry",
       "description": "Catch me if you can",
-      "imgurl": "librarypic.jpg",
+      "imgurl": "http://localhost:8001/librarypic.jpg",
       "status": "Available",
       "category": "Kids"
+    },
+    {
+      "title": "dasdf",
+      "description": "asdfsadf",
+      "category": "asfdsdf",
+      "imgurl": "http://localhost:8001/librarypic.jpg",
+      "status": "Available",
+      "id": 2
     }
   ]
 }
