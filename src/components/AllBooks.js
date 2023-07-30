@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardDeck, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import { Card, CardImg, CardDeck, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { fetchBooks, removeBook } from '../features/api/api';
 //import bla from '../app/images';
 
@@ -26,6 +26,8 @@ const AllBooks = () => {
       <CardDeck>
         {books.map((book) => (
           <Card key={book.id} className="mb-3">
+            <CardImg src={book.imgurl} alt={book.title} className="card-img-top" />
+            {console.log(book.imgurl)}
             <CardBody>
               <CardTitle>{book.title}</CardTitle>
               <CardText>{book.description}</CardText>

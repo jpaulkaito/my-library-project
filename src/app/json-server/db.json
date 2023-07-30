@@ -4,6 +4,7 @@
       "id": 0,
       "title": "Romeo And Juliet",
       "description": "Love and forever",
+      "imgurl": "librarypic.jpg",
       "status": "Available",
       "category": "Romance"
     },
@@ -11,86 +12,9 @@
       "id": 1,
       "title": "Tom And Jerry",
       "description": "Catch me if you can",
+      "imgurl": "librarypic.jpg",
       "status": "Available",
       "category": "Kids"
-    },
-    {
-      "title": "abcd",
-      "description": "abcd",
-      "category": "education",
-      "status": "Available",
-      "id": 4
-    },
-    {
-      "title": "asdf",
-      "description": "asdf",
-      "category": "asdf",
-      "status": "Available",
-      "id": 6
-    },
-    {
-      "title": "a",
-      "description": "a",
-      "category": "a",
-      "imgurl": "librarypic - Copy.jpg",
-      "status": "Available",
-      "id": 15
-    },
-    {
-      "title": "a",
-      "description": "a",
-      "category": "a",
-      "imgurl": "librarypic - Copy.jpg",
-      "status": "Available",
-      "id": 16
-    },
-    {
-      "title": "a",
-      "description": "a",
-      "category": "a",
-      "imgurl": "librarypic - Copy.jpg",
-      "status": "Available",
-      "id": 17
-    },
-    {
-      "title": "a",
-      "description": "a",
-      "category": "a",
-      "imgurl": "librarypic - Copy.jpg",
-      "status": "Available",
-      "id": 18
-    },
-    {
-      "title": "df",
-      "description": "sdf",
-      "category": "df",
-      "imgurl": "librarypic.jpg",
-      "status": "Available",
-      "id": 19
-    },
-    {
-      "title": "y",
-      "description": "y",
-      "category": "y",
-      "imgurl": "librarypic.jpg",
-      "status": "Available",
-      "id": 20
-    },
-    {
-      "title": "z",
-      "description": "z",
-      "category": "z",
-      "imgurl": "librarypic - Copy.jpg",
-      "status": "Available",
-      "id": 21
-    },
-    {
-      "title": "j",
-      "description": "j",
-      "category": "j",
-      "imgurl": "librarypic.jpg",
-      "status": "Available",
-      "id": 22
     }
   ]
 }
