@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Card, CardImg, CardDeck, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import { Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
 import { fetchBooks, removeBook } from '../features/api/api';
-// import { mapImageURL } from '../utils/mapImageURL';
+ import { baseUrlImg } from '../app/shared/baseUrl';
 
 const AllBooks = () => {
   const [books, setBooks] = useState([]);
@@ -27,11 +27,16 @@ const AllBooks = () => {
   return (
     <div>
       <h2>All Books</h2>
-      <CardDeck>
+      <div className="card-deck-wrapper">
         {books.map((book) => (
           <Card key={book.id} className="mb-3">
-            <CardImg src={book.imgurl} alt={book.title} className="card-img-top" />
-            {console.log(book.imgurl)}
+            <div className="book-image-container">
+              <img
+                src={baseUrlImg + book.imgurl}
+                alt={book.title}
+                className="book-image"
+              />
+            </div>
             <CardBody>
               <CardTitle>{book.title}</CardTitle>
               <CardText>{book.description}</CardText>
@@ -41,7 +46,7 @@ const AllBooks = () => {
             </CardBody>
           </Card>
         ))}
-      </CardDeck>
+      </div>
     </div>
   );
 };

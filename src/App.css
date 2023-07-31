@@ -10,6 +10,31 @@
   flex: 1;
   padding: 20px;
 }
+/* allBooks.css */
+.card-deck-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards */
+  justify-content: flex-start; /* Center the cards horizontally */
+}
+
+.card {
+  width: 200px; /* Set a fixed width for each card */
+}
+
+.book-image-container {
+  height: 200px; /* Set a fixed height for the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide any overflowing content within the container */
+}
+
+.book-image {
+  height: 100%; /* Make the image fill the container height */
+  width: auto; /* Automatically adjust the width while maintaining aspect ratio */
+}
+
 /* =========================================================================== */
 
 .App-logo {
