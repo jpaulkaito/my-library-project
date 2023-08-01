@@ -20,6 +20,13 @@ const AddBookForm = () => {
       if (selectedFile) {
         values.imgurl = selectedFile.name;
         console.log("SelectedFile Name: " + selectedFile);
+      } else if (!values.imgurl) {
+        values.imgurl = 'librarypic.jpg';
+      }
+
+      if (selectedFile) {
+        values.imgurl = selectedFile.name;
+        console.log("SelectedFile Name: " + selectedFile);
       }
 
       const response = await fetch(baseUrl + 'libraryBooks', {

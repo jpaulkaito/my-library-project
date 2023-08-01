@@ -1,12 +1,12 @@
 {
   "libraryBooks": [
     {
-      "id": 0,
       "title": "Romeo And Juliet",
       "description": "Love and forever",
-      "imgurl": "romeoandjuliet.jpg",
       "status": "Available",
-      "category": "Romance"
+      "imgurl": "romeoandjuliet.jpg",
+      "category": "Romance",
+      "id": 0
     },
     {
       "id": 1,
@@ -17,14 +17,6 @@
       "category": "Kids"
     },
     {
-      "title": "dasdf",
-      "description": "asdfsadf",
-      "category": "asfdsdf",
-      "imgurl": "librarypic.jpg",
-      "status": "Available",
-      "id": 2
-    },
-    {
       "title": "Harry Potter",
       "description": "Harry Potter and The Philosopher's Stone",
       "category": "Fiction",
@@ -33,12 +25,36 @@
       "id": 3
     },
     {
-      "title": "test23",
-      "description": "test23",
+      "title": "Tom And Jerry 23",
+      "description": "This is the second release of this book",
       "status": "Available",
       "imgurl": "tomandjerry.jpg",
       "category": "test",
       "id": 4
+    },
+    {
+      "title": "Test Book",
+      "description": "Test Book",
+      "category": "Test Book",
+      "imgurl": "librarypic.jpg",
+      "status": "Available",
+      "id": 5
+    },
+    {
+      "title": "Book2 Test",
+      "description": "Book2 Test",
+      "category": "Book Test",
+      "imgurl": "librarypic.jpg",
+      "status": "Available",
+      "id": 6
+    },
+    {
+      "title": "Big Nate And Friends",
+      "description": "This is a book about Nate who is big and his friends.",
+      "category": "Kids",
+      "imgurl": "bignateandfriends.png",
+      "status": "Available",
+      "id": 7
     }
   ]
 }
