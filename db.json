@@ -9,12 +9,12 @@
       "id": 0
     },
     {
-      "id": 1,
-      "title": "Tom And Jerry",
-      "description": "Catch me if you can",
-      "imgurl": "tomandjerry.jpg",
+      "title": "Tom And Jerry2",
+      "description": "Catch me if you can2",
       "status": "Available",
-      "category": "Kids"
+      "imgurl": "tomandjerry.jpg",
+      "category": "Kids",
+      "id": 1
     },
     {
       "title": "Harry Potter",
@@ -39,14 +39,6 @@
       "imgurl": "librarypic.jpg",
       "status": "Available",
       "id": 5
-    },
-    {
-      "title": "Book2 Test",
-      "description": "Book2 Test",
-      "category": "Book Test",
-      "imgurl": "librarypic.jpg",
-      "status": "Available",
-      "id": 6
     },
     {
       "title": "Big Nate And Friends",

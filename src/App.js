@@ -1,10 +1,12 @@
 // App.js
 import React from 'react';
-import Sidebar from './pages/SidebarMenu';
+import Sidebar from './components/SidebarMenu';
 import { Routes, Route } from 'react-router-dom';
 import AddBookPage from './pages/AddBookPage';
 import DeleteBookPage from './pages/DeleteBookPage';
 import UpdateBookPage from './pages/UpdateBookPage';
+import BorrowPage from './pages/BorrowPage';
+
 import './App.css';
 
 const App = () => {
@@ -17,7 +19,8 @@ const App = () => {
         <Routes>
           <Route path='/addbooks' element={<AddBookPage />} />
           <Route path='/deletebooks' element={<DeleteBookPage />} />
-          <Route path='/updatebooks' element={<UpdateBookPage />} />
+          <Route path='/updatebooks' element={<UpdateBookPage />} /> 
+          <Route path='/borrow' element={<BorrowPage />} /> 
         </Routes>
       </div>
     </div>

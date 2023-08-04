@@ -26,11 +26,15 @@ const Updatebook = () => {
         setBooks((prevBooks) =>
             prevBooks.map((book) => (book.id === updatedBook.id ? updatedBook : book))
         );
-        setShowUpdateFormForBookId(null); // Hide the update form after successful update
+        setShowUpdateFormForBookId(null);
     };
 
     const handleUpdateButtonClick = (bookId) => {
         setShowUpdateFormForBookId(bookId);
+    };
+
+    const handleCancelUpdate = () => {
+        setShowUpdateFormForBookId(null);
     };
 
     return (
@@ -49,22 +53,25 @@ const Updatebook = () => {
                                     className="book-image"
                                 />
                             </div>
-                            <CardBody>
+                            <CardBody className="d-flex flex-column">
                                 <CardTitle>{book.title}</CardTitle>
                                 <CardText>{book.description}</CardText>
-                                {showUpdateFormForBookId === book.id ? (
-                                    <UpdateBookForm
-                                        book={book}
-                                        onUpdate={handleBookUpdated}
-                                    />
-                                ) : (
-                                    <Button
-                                        color="primary"
-                                        onClick={() => handleUpdateButtonClick(book.id)}
-                                    >
-                                        Update
-                                    </Button>
-                                )}
+                                <div className="d-flex justify-content-center align-items-center mt-auto">
+                                    {showUpdateFormForBookId === book.id ? (
+                                        <UpdateBookForm
+                                            book={book}
+                                            onUpdate={handleBookUpdated}
+                                            onCancel={handleCancelUpdate}
+                                        />
+                                    ) : (
+                                        <Button
+                                            color="primary"
+                                            onClick={() => handleUpdateButtonClick(book.id)}
+                                        >
+                                            Update
+                                        </Button>
+                                    )}
+                                </div>
                             </CardBody>
                         </Card>
                     ))}

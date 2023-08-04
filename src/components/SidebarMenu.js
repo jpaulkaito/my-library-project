@@ -24,9 +24,9 @@ const SidebarMenu = () => {
                 <MenuItem component={<Link to="/addbooks" />}> Add Books</MenuItem>
                 <MenuItem component={<Link to="/deletebooks" />}> Remove Books</MenuItem>
                 <MenuItem component={<Link to="/updatebooks" />}> Update Books</MenuItem>
-                <SubMenu label="Display Books">
-                    <MenuItem> by Title </MenuItem>
-                    <MenuItem> by Author </MenuItem>
+                <SubMenu label="Books Requests">
+                    <MenuItem component={<Link to="/borrow" />}> Borrow </MenuItem>
+                    <MenuItem> Return </MenuItem>
                     <MenuItem> by Category </MenuItem>
                 </SubMenu>
             </Menu>

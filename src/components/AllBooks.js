@@ -8,13 +8,13 @@ import Deleting from './Deleting';
 const AllBooks = () => {
   const [loading, setLoading] = useState(true);
   const [books, setBooks] = useState([]);
-  const [deletingStates, setDeletingStates] = useState([]); // Separate state for each book
+  const [deletingStates, setDeletingStates] = useState([]);
 
   useEffect(() => {
     fetchBooks()
       .then((data) => {
         setBooks(data);
-        setDeletingStates(data.map(() => false)); // Initialize deleting states for each book to false
+        setDeletingStates(data.map(() => false));
         setLoading(false);
       })
       .catch((error) => {
@@ -27,7 +27,7 @@ const AllBooks = () => {
     try {
       setDeletingStates((prevStates) => {
         const newStates = [...prevStates];
-        newStates[index] = true; // Set deleting state to true for the specific book
+        newStates[index] = true;
         return newStates;
       });
 
@@ -65,15 +65,17 @@ const AllBooks = () => {
                   className="book-image"
                 />
               </div>
-              <CardBody>
+              <CardBody className="d-flex flex-column">
                 <CardTitle>{book.title}</CardTitle>
                 <CardText>{book.description}</CardText>
-                <Button
-                  color="danger"
-                  onClick={() => handleBookDeleted(book.id, index)} // Pass index to identify which book is being deleted
-                >
-                  {deletingStates[index] ? <Deleting /> : 'Delete'} {/* Use the specific deleting state */}
-                </Button>
+                <div className="d-flex justify-content-center align-items-center mt-auto">
+                  <Button
+                    color="danger"
+                    onClick={() => handleBookDeleted(book.id, index)} // Pass index to identify which book is being deleted
+                  >
+                    {deletingStates[index] ? <Deleting /> : 'Delete'} {/* Use the specific deleting state */}
+                  </Button>
+                </div>
               </CardBody>
             </Card>
           ))}

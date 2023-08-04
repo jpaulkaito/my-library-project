@@ -3,7 +3,7 @@ import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import { updateBook } from '../features/api/api';
 import Updating from './Updating';
 
-const UpdateBookForm = ({ book, onUpdate }) => {
+const UpdateBookForm = ({ book, onUpdate, onCancel }) => {
     const [updating, setUpdating] = useState(false);
     const [title, setTitle] = useState(book.title);
     const [description, setDescription] = useState(book.description);
@@ -30,6 +30,12 @@ const UpdateBookForm = ({ book, onUpdate }) => {
             setUpdating(false);
         }
     };
+
+    const handleCancel = () => {
+        setTitle(book.title);
+        setDescription(book.description);
+        onCancel();
+    }
 
     return (
         <Form>
@@ -63,6 +69,11 @@ const UpdateBookForm = ({ book, onUpdate }) => {
             <Button color="primary" onClick={handleUpdate} disabled={updating}>
                 {updating ? <Updating /> : 'Update'}
             </Button>
+            {updating ? <></> :
+                <Button color="danger" onClick={handleCancel} disabled={updating}>
+                    {updating ? <Updating /> : 'Cancel'}
+                </Button>
+            }
         </Form>
     );
 };
